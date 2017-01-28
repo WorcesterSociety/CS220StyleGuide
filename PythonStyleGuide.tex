@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{listings}
+\graphicspath{ {images/} }
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+  \noindent{\bf #1: #2} \vspace{0.5em}
+  \hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Kyle Vedder}
+\newcommand{\myaddress}{\{kvedder, aaronweiss, hpoddar, ilevyor, jholzman,
+  jreedie, timothymcnam\}@umass.edu, gordon@cs.umass.edu}
+\newcommand{\myhwnum}{4}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{CS 220 Python Style Guide}}}
+\rhead{\fancyplain{}{}}
+\chead{\fancyplain{}{}}
+\usepackage{color}
+
+\newenvironment{answer}{\color{blue}\ttfamily}{\par}
+
+\begin{document}
+
+\medskip
+
+\thispagestyle{plain}
+\begin{center}
+  {\Large CS 220 Python Style Guide} \\
+  \myaddress\\
+  \today \\
+\end{center}
+
+\question{0}{Why?}
+
+Style matters. Code is read far more than it's written, and thus writing
+readable code is critical.
+
+This document aims to outline guidelines that will make your code more readable;
+it's for your TAs and for your instructor, but it's also for you. Debugging is
+easier when you can actually read the hodgepodge of code in front of you.
+
+This document ultimately is a very pared down version of the PEP8 style guide.
+It's short, please read it.
+
+\question{1}{Indentation}
+\begin{enumerate}
+  \item \textbf{Use four spaces, not tabs.} Do not mix tabs and spaces; Python 3 does not allow
+    for mixing of the two and will throw errors.
+  \item \textbf{Use hanging indents for long lines:}
+
+\begin{lstlisting}[language=Python]
+# Aligned with opening delimiter.
+foo = long_function_name(var_one, var_two,
+                         var_three, var_four)
+\end{lstlisting}
+                       
+Note that the variables line up under one another so that it's clear they are
+part of the function invocation.
+
+  \item \textbf{Line limit of 80 characters.} Don't write crazy long lines.
+\end{enumerate}
+
+\question{2}{Whitespace}
+
+\begin{enumerate}
+  \item \textbf{Avoid extraneous whitespace.} Don't put spaces between the start
+    of a function parameter list and the first parameter and other places where
+    it don't aid readability.
+  \item \textbf{Use whitespace to aid in readability.} Add it after a comma in a
+    list, and places of that nature that aid in clarifying the code's intent.
+\end{enumerate}
+
+\question{3}{Comments}
+
+\begin{enumerate}
+  \item \textbf{Use comments sparingly.} Don't make every other line comments,
+    as this results in code that doesn't flow well. Comments should carry their
+    weight, not just restate the line below them.
+  \item \textbf{Avoid inline comments.} Add comments to the line above, not at
+    the end of a line after the code.
+  \end{enumerate}
+
+\question{4}{Naming Convention}
+
+\begin{enumerate}
+  \item \textbf{Use snake case for variable names.} It's
+    \textit{my\_variable\_name}, not \textit{myVariableName}.
+  \item \textbf{Use Pascal case for class names.} It's
+    \textit{MyClassName}, not \textit{my\_class\_name}.
+  \item \textbf{Use all caps for constants.} 'Nuff said.
+  \item \textbf{Differentiate between internal and external variables.} Begin
+    local variables with an underscore: \textit{\_my\_internal\_name} not
+    \textit{my\_internal\_name}.
+  \item \textbf{Avoid single letter variables.} The variable \textit{O} doesn't
+    tell you very much, does it?
+\end{enumerate}  
+\end{document}
