@@ -1,7 +1,7 @@
 
 
 all: make-pdf
-make-pdf:
+make-pdf: PythonStyleGuide.tex
 	pdflatex PythonStyleGuide.tex
 
 clean:
