@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{listings}
+\usepackage{hyperref}
 \graphicspath{ {images/} }
 
 \newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
@@ -77,7 +78,7 @@ part of the function invocation.
 \begin{enumerate}
   \item \textbf{Avoid extraneous whitespace.} Don't put spaces between the start
     of a function parameter list and the first parameter and other places where
-    it don't aid readability.
+    it doesn't aid readability.
   \item \textbf{Use whitespace to aid in readability.} Add it after a comma in a
     list, and places of that nature that aid in clarifying the code's intent.
 \end{enumerate}
@@ -101,11 +102,26 @@ part of the function invocation.
     \textit{my\_variable\_name}, not \textit{myVariableName}.
   \item \textbf{Use Pascal case for class names.} It's
     \textit{MyClassName}, not \textit{my\_class\_name}.
-  \item \textbf{Use all caps for constants.} 'Nuff said.
-  \item \textbf{Differentiate between internal and external variables.} Begin
-    local variables with an underscore: \textit{\_my\_internal\_name} not
-    \textit{my\_internal\_name}.
+  \item \textbf{Use all caps for constants with underscores for spaces.} It's
+    \textit{MY\_CONSTANT\_NAME}, not \textit{my\_constant\_name}.
+  \item \textbf{Use short, all lowercase names for package and module names.}
+    It's \textit{mypackagename} not \textit{my\_package\_name}.
+  \item \textbf{Differentiate between public and private variables.} In Java, private
+    variables cannot be accessed outside of the object they are declared inside.
+    Python does not have the concept of Public and Private, but instead follows
+    the convention of beginning private variables with underscores. Thus:
+    \textit{\_my\_private\_name} not \textit{my\_private\_name}.
+
+    For more information, see the
+    \href{https://docs.python.org/3/tutorial/classes.html#private-variables}
+    {Python docs on private variables.}
   \item \textbf{Avoid single letter variables.} The variable \textit{O} doesn't
     tell you very much, does it?
+  
+  \item \textbf{Other naming conventions.} The underscore itself does have
+    special significance in some cases in Python. For example,
+    \textit{\_\_init\_\_} is a ``magic '' attribute that lives in
+    user-controlled namespaces. Do not name you standard variables with leading
+    and trailing double underscores; only use these names as directed by the documentation.
 \end{enumerate}  
 \end{document}
