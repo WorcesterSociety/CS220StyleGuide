@@ -2,3 +2,4 @@ auto
 *.aux
 *.dvi
 *.log
+*.out
